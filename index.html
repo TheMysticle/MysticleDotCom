@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mysticle</title>
+    
+    <!-- Open Graph / Discord Embed Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://themysticle.com">
+    <meta property="og:title" content="The Mysticle | Content Creator">
+    <meta property="og:description" content="Join our community for gaming, VR experiences, and tech reviews!">
+    <meta property="og:image" content="https://yt3.googleusercontent.com/sG-yAez_BVyc7HeafRd39BthsbqhVT3QUiK8uQNxSRsdNS8PyLgYzI1frCWFaBeL7y92sPOU=s160-c-k-c0x00ffffff-no-rj">
+    <meta property="og:image:width" content="160">
+    <meta property="og:image:height" content="160">
+    <meta property="og:site_name" content="The Mysticle">
+    
+    <!-- Twitter Card Meta Tags (also used by Discord) -->
+    <meta name="twitter:url" content="https://themysticle.com">
+    <meta name="twitter:title" content="The Mysticle | Content Creator">
+    <meta name="twitter:description" content="Join our community for gaming, VR experiences, and tech reviews!">
+    <meta name="twitter:image" content="https://yt3.googleusercontent.com/sG-yAez_BVyc7HeafRd39BthsbqhVT3QUiK8uQNxSRsdNS8PyLgYzI1frCWFaBeL7y92sPOU=s160-c-k-c0x00ffffff-no-rj">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="Join our community for gaming, VR experiences, and tech reviews!">
+    <meta name="author" content="The Mysticle">
+    <meta name="theme-color" content="#18191a">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">The Mysticle</div>
+        <div class="nav-actions">
+            <a href="https://www.youtube.com/@TheMysticle" target="_blank" class="subscribe-btn">Subscribe</a>
+        </div>
+    </nav>
+    <section class="banner">
+        <div class="banner-center">
+            <div class="profile-pic-container">
+                <img src="https://yt3.googleusercontent.com/sG-yAez_BVyc7HeafRd39BthsbqhVT3QUiK8uQNxSRsdNS8PyLgYzI1frCWFaBeL7y92sPOU=s160-c-k-c0x00ffffff-no-rj" alt="The Mysticle Profile" class="profile-pic" onclick="openChannel('https://www.youtube.com/@TheMysticle')">
+            </div>
+            <div class="banner-content">
+                <h1>Welcome to The Mysticle</h1>
+                <p>Your source for Virtual Reality & Tech content.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com/_themysticle_" target="_blank" title="Instagram">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="https://twitter.com/TheMysticle" target="_blank" title="Twitter">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter">
+                    </a>
+                    <button id="open-discord-modal" class="icon-btn" title="Discord" aria-label="Open Discord">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord">
+                    </button>
+                    <button id="open-support-modal" class="icon-btn support-btn" title="Support" aria-label="Open Support Options">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/buymeacoffee.svg" alt="Support">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="related-channels">
+        <h2>Related Channels</h2>
+        <div class="channels-list">
+            <div class="channel" onclick="openChannel('https://www.youtube.com/@MysticleMore')">
+                <img src="https://yt3.googleusercontent.com/T8OJIH4xqSNzONinI0gXxQriUBRAufNFTDtcigzPrsDAncMVsrW7jupwxQa4IMI_0-5w99r0ipc=s900-c-k-c0x00ffffff-no-rj" alt="Mysticle More">
+                <span>Mysticle More</span>
+                <p class="channel-desc">Vlogs and random content</p>
+            </div>
+            <div class="channel" onclick="openChannel('https://www.youtube.com/@Mysticlepl')">
+                <img src="https://yt3.googleusercontent.com/F3zUdX0nCXgW04h7TztVrWTy3KcDTKWoTbK-535xIob7uZi1uB9mIabUZ1rpWetj3vFKwMiPX1A=s160-c-k-c0x00ffffff-no-rj" alt="MysticlePL">
+                <span>Mysticle</span>
+                <p class="channel-desc">Polish and tech content</p>
+            </div>
+        </div>
+    </section>
+    <section class="minecraft-section">
+        <div class="section-banner" style="background-image: url('img/minecraft.jpg');">
+            <div class="section-content">
+                <h2>Minecraft Server</h2>
+                <p>
+                    Our Minecraft Factions server is launching soon at <strong id="mc-ip">mc.themysticle.com</strong>! Play with our friendly community and enjoy Vivecraft mod support for VR. Team up, build, and compete in exciting events—everyone is welcome!
+                </p>
+                <button class="minimal-btn" id="copy-ip-btn">Copy IP</button>
+            </div>
+        </div>
+    </section>
+    <section class="vrchat-section">
+        <div class="section-banner" style="background-image: url('img/vrchat.png');">
+            <div class="section-content">
+                <h2>VRChat World</h2>
+                <p>
+                    Our VRChat world is in development! Soon, you'll be able to join us for meetups, events, and hangouts in a custom Mysticle space. Connect with the community, make new friends, and experience VR together. We can't wait to see you there!
+                </p>
+                <a href="https://vrchat.com/home/world/wrld_xxxxxxxx" target="_blank" class="minimal-btn">Visit VRChat World</a>
+            </div>
+        </div>
+    </section>
+    <section class="setups-section">
+        <div class="section-banner" style="background-image: url('img/setups.jpg');">
+            <div class="section-content">
+                <h2>Setup Reviews</h2>
+                <p>
+                    Share your gaming or VR setup with the community! Submit photos and details through our Google form to be featured and reviewed live on stream. Get feedback, tips, and showcase your awesome setup to viewers!
+                </p>
+                <a href="https://forms.gle/1VQmxGtvSF5vKJCk8" target="_blank" class="minimal-btn">Submit Your Setup</a>
+            </div>
+        </div>
+    </section>
+    <!-- Discord modal (hidden by default) -->
+    <div class="modal-overlay" id="discord-modal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="discord-title">
+            <button class="modal-close" id="discord-modal-close" aria-label="Close">×</button>
+            <div class="modal-content">
+                <h3 id="discord-title">Discord</h3>
+                <p>
+                    Join our Discord for events, suggestions, movie nights, and community livestreams. Meet other viewers, share ideas for the server and channel, and jump into regular community hangouts—everyone is welcome!
+                </p>
+                <div class="modal-actions">
+                    <a href="https://discord.com/invite/NUqvaCz" target="_blank" class="minimal-btn discord-join">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="" class="discord-logo" aria-hidden="true" />
+                        <span>Join Discord</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Support modal (hidden by default) -->
+    <div class="modal-overlay" id="support-modal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="support-title">
+            <button class="modal-close" id="support-modal-close" aria-label="Close">×</button>
+            <div class="modal-content">
+                <h3 id="support-title">Support The Channel</h3>
+                <p>
+                    Love the content? Your support helps keep the channel running and allows me to create more amazing VR and tech content. Every contribution is greatly appreciated and helps the community grow!
+                </p>
+                <div class="modal-actions">
+                    <a href="https://patreon.com/themysticle" target="_blank" class="minimal-btn discord-join">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/patreon.svg" alt="" class="discord-logo" aria-hidden="true" />
+                        <span>Patreon</span>
+                    </a>
+                    <a href="https://buymeacoffee.com/mysticle" target="_blank" class="minimal-btn discord-join">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/buymeacoffee.svg" alt="" class="discord-logo" aria-hidden="true" />
+                        <span>Buy Me A Coffee</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="theme-toggle" id="theme-toggle" title="Toggle theme">
+        <span id="theme-emoji" style="font-size: 1.7rem;">🌙</span>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

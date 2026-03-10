@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@500&display=swap');
+
+:root {
+    --bg-dark: #18191a;
+    --bg-light: #f3f4f6; /* slightly off-white */
+    --navbar-dark: #18191a;
+    --border-light: #e0e0e0;
+    --text-dark: #fff;
+    --text-light: #222;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    transition: background 0.3s, color 0.3s;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--navbar-dark);
+    padding: 0 2rem;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #222; /* Closer to site color */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+}
+
+.subscribe-btn {
+    background: none;
+    color: var(--text-dark);
+    border: 2px solid #ff0000;
+    padding: 0 1.5rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: border 0.2s, color 0.2s, background 0.2s;
+    box-sizing: border-box;
+}
+
+.subscribe-btn:hover {
+    background: #ff0000;
+    color: #fff;
+    border-color: #ff0000;
+}
+
+.events-btn {
+    background: none;
+    color: var(--text-dark);
+    border: 2px solid #fff;
+    padding: 0 1.5rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: border 0.2s, color 0.2s, background 0.2s;
+    box-sizing: border-box;
+    margin-right: 1rem;
+}
+
+.events-btn:hover {
+    background: #fff;
+    color: var(--bg-dark);
+    border-color: #fff;
+}
+
+.banner,
+.related-channels {
+    background: var(--bg-dark);
+    transition: background 0.3s;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner::before,
+.banner::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 36px; /* Increased from 18px for a longer fade */
+    pointer-events: none;
+    z-index: 2;
+}
+
+.banner::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+}
+
+.banner::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+}
+
+.banner-center {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 3;
+}
+
+.profile-pic-container {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    border: 4px solid #fff;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform-origin: center center;
+}
+
+.profile-pic:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 250px;
+}
+
+.banner-content h1,
+.banner-content p {
+    text-align: left;
+    width: 100%;
+}
+
+.banner-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+}
+
+/* Social icons */
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    filter: invert(1);
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.15);
+}
+
+.related-channels {
+    padding: 0rem 1rem 3rem 1rem;
+    text-align: center;
+    border-top: 1px solid #222; /* Thin line separator, matches navbar */
+}
+
+.related-channels h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.channels-list {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Related channel squares */
+.channel {
+    background: #222325; /* closer to site background, but still lighter */
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    width: 340px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.channel:hover {
+    background: #444;
+    transform: translateY(-8px) scale(1.07);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+}
+
+.channel img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.channel span {
+    font-size: 1.4rem;
+    color: #fff;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.channel-desc {
+    font-size: 1.2rem;
+    color: #bbb;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+/* Floating theme toggle button */
+.theme-toggle {
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    z-index: 200;
+    background: var(--navbar-dark);
+    border: 2px solid #242526;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.3s, border 0.3s;
+}
+
+.theme-toggle span {
+    font-size: 1.7rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Light theme styles */
+body.light-theme {
+    background: #e6e8ea; /* Match related channels button color */
+    color: var(--text-light);
+}
+
+body.light-theme .navbar {
+    background: #e6e8ea;
+    border-bottom: 1px solid #bbb;
+}
+
+body.light-theme .subscribe-btn {
+    color: var(--text-light);
+    border-color: #ff0000;
+}
+
+body.light-theme .banner,
+body.light-theme .related-channels {
+    background: #e6e8ea;
+}
+
+/* Light theme: stronger shadow for banner */
+body.light-theme .banner::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(120,120,120,0.22), rgba(230,232,234,0));
+}
+
+body.light-theme .banner::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(120,120,120,0.22), rgba(230,232,234,0));
+}
+
+/* Light theme: related channel squares slightly darker */
+body.light-theme .channel {
+    background: #d1d3d6;
+}
+
+body.light-theme .channel span,
+body.light-theme .channel-desc {
+    color: #222;
+}
+
+body.light-theme .social-icons img {
+    filter: invert(0); /* Make icons dark in light mode */
+}
+
+body.light-theme .banner-content p {
+    color: #444; /* Darker description text in light mode */
+}
+
+/* Floating theme toggle button */
+.theme-toggle {
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    z-index: 200;
+    background: var(--navbar-dark);
+    border: 2px solid #242526;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.3s, border 0.3s;
+}
+
+.theme-toggle span {
+    font-size: 1.7rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Light theme styles */
+body.light-theme .theme-toggle {
+    background: #e6e8ea;
+    border: 2px solid #bbb;
+}
+
+/* Light theme: thin line between banner and related channels matches navbar */
+body.light-theme .related-channels {
+    border-top: 1px solid #bbb;
+}
+
+/* Responsive banner layout for mobile */
+@media (max-width: 700px) {
+    .banner-center {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+    }
+
+    .profile-pic {
+        width: 140px !important;
+        height: 140px !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .banner-content {
+        display: block !important;
+        text-align: center !important;
+    }
+
+    .banner-content h1 {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    .banner-content p {
+        font-size: 1rem !important;
+        text-align: center !important;
+    }
+
+    .social-icons {
+        justify-content: center !important;
+    }
+}
+
+.section-banner {
+    width: 100%;
+    min-height: 260px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.section-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(24, 25, 26, 0.7); /* dark overlay for readability */
+    z-index: 1;
+    border-radius: 0;
+}
+
+.section-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 2rem 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+}
+
+.section-content p {
+    font-size: 1.15rem;
+    color: #eee;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.minimal-btn {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    background: none;
+    color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', Arial, sans-serif;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.minimal-btn:hover {
+    background: #e0e0e0;
+    color: #18191a;
+    border-color: #e0e0e0;
+}
+
+/* small icon button style used in banner */
+.icon-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 0 -0.30rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+}
+.icon-btn img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: invert(1);
+    transition: transform 0.18s ease, filter 0.18s;
+}
+
+.icon-btn:hover img,
+.icon-btn:focus img {
+    transform: scale(1.15);
+    /* keep the filter change consistent with other icons if needed */
+    /* filter: invert(0.9); */
+}
+
+/* remove focus outline */
+.icon-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.icon-btn:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Specific styling for the support/buymeacoffee button */
+.support-btn {
+    margin: 0 0 0 -0.48rem;
+}
+
+.support-btn img {
+    width: 29px;
+    height: 29px;
+    object-fit: contain;
+}
+
+/* Modal overlay and dialog */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    z-index: 300;
+    padding: 2rem;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal {
+    width: 100%;
+    max-width: 520px;
+    background: var(--navbar-dark);
+    color: var(--text-dark);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+    transform: scale(0.96);
+    opacity: 0;
+    animation: pop-in 240ms cubic-bezier(.2,.9,.3,1) forwards;
+    position: relative;
+}
+
+/* pop animation */
+@keyframes pop-in {
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* modal content */
+.modal-content {
+    padding: 1.75rem;
+    text-align: left;
+}
+.modal h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+.modal p {
+    margin: 0 0 1rem 0;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* close button */
+.modal-close {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    background: transparent;
+    color: #bbb;
+    border: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* modal actions */
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.discord-join {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
+    background: none;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    text-decoration: none;
+}
+.discord-logo {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+/* light theme modal adjustments */
+body.light-theme .modal {
+    background: #fff;
+    color: #111;
+}
+body.light-theme .modal p { color: #444; }
+body.light-theme .discord-join {
+    color: #111;
+    border-color: rgba(0,0,0,0.08);
+}
+body.light-theme .discord-logo { filter: invert(0); }
+
+/* ensure banner icon matches theme filters */
+body.light-theme .icon-btn img { filter: invert(0); }
